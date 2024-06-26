@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Front-End (React)
+#### 1. Pré-requisitos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Node.js (versão 14.x ou superior)
+    npm (versão 6.x ou superior) ou yarn (versão 1.x ou superior)
 
-## Available Scripts
+#### 2. Instalação
 
-In the project directory, you can run:
+Clone o repositório:
 
-### `npm start`
+```bash
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+git clone https://github.com/natanielmartinsoliveira/teste-quikdev-front.git
+cd your-repo/front-posts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
 
-### `npm test`
+#### 3. Instale as dependências:
+Se estiver usando npm:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
 
-### `npm run build`
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se estiver usando yarn:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
 
-### `npm run eject`
+yarn install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 4. Inicialização
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Inicie o servidor de desenvolvimento:
+Se estiver usando npm:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
 
-## Learn More
+$ npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Se estiver usando yarn:
+
+```bash
+
+$ yarn start
+
+```
+
+
+### Linguagem: TypeScript
+## Versão: 4.x
+
+Motivo da Escolha: TypeScript fornece digitação estática, que ajuda a detectar erros durante o desenvolvimento e melhora a experiência do desenvolvedor por meio de melhores ferramentas de desenvolvimento.
+
+### Frontend (React)
+## Framework: React
+Versão: 17.x ou 18.x
+
+Motivo da Escolha: React é uma biblioteca JavaScript popular e com bom suporte para construção de interfaces de usuário. É eficiente, modular e possui uma grande comunidade e ecossistema de pacotes.
+
+### Bibliotecas Adicionais:
+Axios: Faça solicitações HTTP. É uma biblioteca popular, fácil de usar e com forte suporte para Promises.
+
+React Router (react-router-dom): usado para gerenciamento de roteamento. Permite a criação de rotas dinâmicas e aninhadas, facilitando assim a navegação na aplicação.
+Versão: 6.x
+Motivo da Escolha: react-router-dom é uma biblioteca poderosa para gerenciar a navegação em aplicativos React.
+
+Bootstrap: Fornece componentes prontos para acelerar o desenvolvimento de interfaces de usuário atraentes.
+Versão: 5.x
+Motivo da Escolha: bootstrap é uma estrutura CSS popular que facilita a criação de layouts responsivos e visualmente atraentes. Ele oferece uma variedade de componentes de UI pré-estilizados, reduzindo o tempo necessário para criar interfaces modernas e coesas.
