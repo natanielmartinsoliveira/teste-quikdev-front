@@ -13,7 +13,6 @@ const Report: React.FC = () => {
           try {
             const commentsResponse = await axios.get(`http://localhost:5000/comments?postId=${post._id}`);
             const likesResponse = await axios.get(`http://localhost:5000/posts/${post._id}`);
-            console.log("likes",likesResponse);
             return {
               ...post,
               comment: commentsResponse.data.length,

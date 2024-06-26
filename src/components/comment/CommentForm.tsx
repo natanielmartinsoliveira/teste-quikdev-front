@@ -20,7 +20,6 @@ const CommentForm: React.FC<CommentFormProps> = ({ postId , onCommentCreated }) 
     };
     try {
         const response = await axios.post('http://localhost:5000/comments', newComment);
-        console.log(response.data);
         setText('');
         onCommentCreated();
       } catch (error) {

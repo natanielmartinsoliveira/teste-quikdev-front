@@ -54,7 +54,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     .then(response => {
       if (response.data?.access_token?.length > 0) {
         const loggedInUser = response.data;
-        console.log(loggedInUser);
         setUser(loggedInUser);
         localStorage.setItem('user', JSON.stringify(loggedInUser));    
         checkTokenValidity(); // Verifique a validade do token após o login
@@ -81,12 +80,12 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
     const user = JSON.parse(userData);
     const accessToken = user?.access_token;
-    console.log('teste', accessToken);
+
     try {
       const response = await axios.get('http://localhost:5000/auth/validate-token', {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
-      console.log(response);
+
       if (response.data.valid) {
         setIsAuthenticated(true);
       } else {
@@ -102,13 +101,10 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     await axios.post('http://localhost:5000/users/register', userData)
     .then((response)=>{
       if (response.data?.access_token?.length > 0) {
-        console.log('user',response);
         localStorage.setItem('user', JSON.stringify(response.data));
         setIsAuthenticated(true);
         checkTokenValidity(); // Verifique a validade do token após o login
         login(userData.email, userData.password);
-
-        //
       } else {
         throw new Error('Invalid email or password');
       }

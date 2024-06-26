@@ -26,16 +26,7 @@ const CommentList: React.FC<CommentListProps> = ({ postId }) => {
     fetchComments();
   }, [fetchComments]);
 
-  const handleDeleteComment = async (deletedCommentId: any) => {
-    try {
-      await axios.delete(`http://localhost:5000/comments/${deletedCommentId}`);
-      // Atualiza a lista de comentários após a exclusão
-      setComments(comments.filter(comment => comment._id !== deletedCommentId));
-    } catch (error) {
-      console.error('Error deleting comment:', error);
-    }
-  };
-
+ 
   const handleUpdateComment = (updatedComment: any) => {
     // Atualiza o comentário na lista após a edição
     const updatedComments = comments.map((comment) =>
@@ -53,12 +44,6 @@ const CommentList: React.FC<CommentListProps> = ({ postId }) => {
         onDelete={handleUpdateComment}
         onUpdate={handleUpdateComment}
       />
-        /*<div key={comment._id}>
-          <p>{comment.text}</p>
-          {user!._id === comment.userId && (
-            <button onClick={() => handleDelete(comment._id)}>Delete</button>
-          )}
-        </div>*/
       ))}
       <div>{user && (<CommentForm postId={postId} onCommentCreated={() => fetchComments()}/>)}</div>
     </div>

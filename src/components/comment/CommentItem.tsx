@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../../axiosInstance';
 import {useAuth} from '../../hooks/useAuth';
 import { Comment } from '../../types';
@@ -13,6 +13,22 @@ const CommentItem: React.FC<CommentItemProps> = ({ comment, onDelete, onUpdate }
   const { user } = useAuth();
   const [editing, setEditing] = useState(false);
   const [content, setContent] = useState(comment.description);
+  const [author, setAuthor] = useState('');
+
+  useEffect(() => {
+    const fetchAuthor = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/users/${comment.userId}`);
+        const author = response.data?.name;
+        setAuthor(author);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+
+    };
+    fetchAuthor();
+    
+  }, [comment.userId]);
 
   const handleEdit = async () => {
     try {
@@ -42,7 +58,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ comment, onDelete, onUpdate }
     <div className={`comment-item ${comment.deleted ? 'deleted-comment' : ''}`}>
       {editing ? (
         <div className="mb-3 p-2 border rounded">
-          <div className="fw-bold">{comment.author}</div>
+          <div className="fw-bold">{author}({comment.userId})</div>
           <div><textarea value={content} onChange={(e) => setContent(e.target.value)} className="form-control"/></div>
           <div className="text-end mt-2">
             <button onClick={handleEdit} className="btn btn-success">Save</button>
@@ -51,7 +67,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ comment, onDelete, onUpdate }
         </div>
       ) : (
         <div className="mb-3 p-2 border rounded">
-          <div className="fw-bold">{comment.userId}</div>
+          <div className="fw-bold">{author} ({comment.userId})</div>
           <div>{comment.deleted ? 'Removed by user' : comment.description}</div>
           {(user?._id == comment.userId || user?._id == comment.postUserId) && !comment.deleted? (
             <div className="text-end mt-2">

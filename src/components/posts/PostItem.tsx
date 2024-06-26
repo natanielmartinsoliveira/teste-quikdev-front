@@ -23,7 +23,6 @@ const PostItem: React.FC<PostItemProps> = ({ post }) => {
       try {
         const response = await axios.get(`http://localhost:5000/likes/${post._id}/likes`);
         const allLikes = response.data;
-        console.log('alooo', allLikes);
         setLikes(allLikes.filter((like: Like) => like.type === 'like'));
         setDislikes(allLikes.filter((like: Like) => like.type === 'dislike'));
       } catch (error) {
@@ -32,7 +31,6 @@ const PostItem: React.FC<PostItemProps> = ({ post }) => {
 
     };
     fetchLikes();
-    console.log('GGGGGG',user?._id);
   }, [post._id]);
 
   /*useEffect(() => {
