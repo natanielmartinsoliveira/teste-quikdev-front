@@ -8,28 +8,48 @@ Front-End (React)
 
 Clone o repositório:
 
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo/frontend
+```bash
+
+git clone https://github.com/natanielmartinsoliveira/teste-quikdev-front.git
+cd your-repo/front-posts
+
+```
 
 3. Instale as dependências:
 Se estiver usando npm:
 
+```bash
+
 npm install
+
+```
 
 Se estiver usando yarn:
 
+```bash
+
 yarn install
+
+```
 
 4. Inicialização
 
 Inicie o servidor de desenvolvimento:
 Se estiver usando npm:
 
-npm start
+```bash
+
+$ npm start
+
+```
 
 Se estiver usando yarn:
 
-yarn start
+```bash
+
+$ yarn start
+
+```
 
 
 ### Linguagem: TypeScript
