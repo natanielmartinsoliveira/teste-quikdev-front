@@ -1,10 +1,10 @@
-### Front-End (React)
-# 1. Pré-requisitos
+# Front-End (React)
+#### 1. Pré-requisitos
 
     Node.js (versão 14.x ou superior)
     npm (versão 6.x ou superior) ou yarn (versão 1.x ou superior)
 
-# 2. Instalação
+#### 2. Instalação
 
 Clone o repositório:
 
