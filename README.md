@@ -15,7 +15,7 @@ cd your-repo/front-posts
 
 ```
 
-3. Instale as dependências:
+#### 3. Instale as dependências:
 Se estiver usando npm:
 
 ```bash
@@ -32,7 +32,7 @@ yarn install
 
 ```
 
-4. Inicialização
+#### 4. Inicialização
 
 Inicie o servidor de desenvolvimento:
 Se estiver usando npm:
