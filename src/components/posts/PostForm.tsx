@@ -38,7 +38,6 @@ const PostForm: React.FC = () => {
       formData.append('userId', user!._id.toString());
   
       try {
-        console.log('postid', postId);
         if (postId) {
           await axios.put(`http://localhost:5000/posts/${postId}`, formData, {
             headers: {
